@@ -1,146 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="hr">
 <head>
-<title>Three Tab Page</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Base body styles from your original code */
-body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white; /* Set default text color to white */
-    margin: 0;
-}
-
-/* Style for the tab buttons */
-.tab {
-    overflow: hidden;
-    border: 1px solid #333;
-    background-color: #1c1c1c;
-}
-
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    color: white;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #555;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #4CAF50; /* A highlight color for the active tab */
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 20px 12px;
-    border: 1px solid #333;
-    border-top: none;
-}
-
-/* Styles from your original code */
-.container {
-    position: relative;
-}
-
-.center {
-    text-align: center;
-    border: 2px solid black;
-    opacity: 0.8; /* Increased opacity for better readability */
-}
-        
-.bottom {
-    position: relative;
-    bottom: 0;
-    color: white;
-    opacity: 0.5; /* Increased opacity for better readability */
-    padding-top: 40px; /* Added padding for spacing */
-}
-
-img {  
-    width: 100%;
-    height: auto;
-    opacity: 0.3; /* Adjusted opacity from your original code */
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab for Chemical & Biomedical Informatics | INANTRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .bg-subtle { background-color: #fcfcfc; }
+        .border-modest { border-color: #e5e7eb; }
+        .text-dim { color: #6b7280; }
+    </style>
 </head>
-<body>
+<body class="bg-subtle text-slate-800">
 
-<h2>Three Tab Page</h2>
-<p>Click on the tabs below:</p>
+    <header class="bg-white border-b border-modest">
+        <div class="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="antro.png" alt="INANTRO" class="h-10 opacity-80">
+                <div class="h-8 border-r border-modest"></div>
+                <span class="text-xs uppercase tracking-widest text-slate-500 font-medium">Laboratorij za kemijsku i <br>biomedicinsku informatiku</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm text-slate-500">
+                <a href="#o-nama" class="hover:text-slate-900 transition">O nama</a>
+                <a href="#projekti" class="hover:text-slate-900 transition">Projekti</a>
+                <a href="#publikacije" class="hover:text-slate-900 transition">Publikacije</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
-  <button class="tablinks" onclick="openTab(event, 'About')">About</button>
-  <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
-</div>
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <h1 class="text-4xl text-slate-900 mb-6">Znanstvena istraživanja u području kemoinformatike i javnog zdravstva.</h1>
+        <p class="text-lg text-dim max-w-2xl leading-relaxed">
+            Naš laboratorij pri Institutu za antropologiju koristi napredne računalne metode za rješavanje kompleksnih biomedicinskih izazova, od analize kvalitete zraka do molekularnog modeliranja.
+        </p>
+    </section>
 
-<div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>This is the main content area, containing your original code.</p>
-  
-  <div class="container">
-      <img src="https://via.placeholder.com/1000x300.png/000000/FFFFFF?text=Placeholder+Image" alt="Placeholder Image" width="1000" height="300">
-  </div>
+    <section id="projekti" class="max-w-4xl mx-auto px-6 py-12 border-t border-modest">
+        <h2 class="text-2xl mb-8">Aktivni EU Projekti</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <a href="https://nextaire.eu/" target="_blank" class="group block p-6 bg-white border border-modest rounded-sm hover:shadow-md transition">
+                <h3 class="font-semibold text-slate-900 group-hover:text-blue-700 transition">NextAire →</h3>
+                <p class="text-sm text-dim mt-2">Personalized tools for air quality and health monitoring.</p>
+            </a>
+            <a href="https://ediaqi.eu/" target="_blank" class="group block p-6 bg-white border border-modest rounded-sm hover:shadow-md transition">
+                <h3 class="font-semibold text-slate-900 group-hover:text-blue-700 transition">EDIAQI →</h3>
+                <p class="text-sm text-dim mt-2">Evidence-based indoor air quality improvement.</p>
+            </a>
+        </div>
+    </section>
 
-  <div class="center">
-      <p>
-          <font color="white">
-              ... coming soon!!! ...
-          </font>
-          <div class="bottom">
-              TBD
-          </div>
-      </p>
-  </div>
-</div>
+    <section id="publikacije" class="max-w-4xl mx-auto px-6 py-12 border-t border-modest">
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+            <h2 class="text-2xl">Znanstveni radovi</h2>
+            <a href="https://scholar.google.com/citations?user=vJxd-xAAAAAJ&hl=en" target="_blank" class="text-sm text-blue-600 hover:underline mt-2 md:mt-0">
+                Pogledajte Google Scholar profil
+            </a>
+        </div>
+        <div class="space-y-6">
+            <div class="bg-white p-6 border-l-2 border-slate-200">
+                <p class="text-sm italic text-dim">Izbor iz bibliografije:</p>
+                <p class="mt-2 text-slate-700">Naš tim redovito objavljuje istraživanja u vrhunskim međunarodnim časopisima pokrivajući teme toksikologije, informatike i antropologije.</p>
+            </div>
+        </div>
+    </section>
 
-<div id="About" class="tabcontent">
-  <h3>About</h3>
-  <p>This is the content for the 'About' tab.</p> 
-</div>
+    <section class="max-w-4xl mx-auto px-6 py-12 mb-20 bg-slate-50 border border-modest rounded-sm">
+        <h2 class="text-xl mb-4 italic">Posebni projekti</h2>
+        <p class="text-sm text-slate-600 mb-4">U suradnji s Poliklinikom Breyer, provodimo istraživanje o endometriozi.</p>
+        <a href="https://endo.inantro.hr" class="text-sm font-semibold text-slate-900 border-b border-slate-900 pb-1">Posjetite endo.inantro.hr</a>
+    </section>
 
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <p>This is the content for the 'Contact' tab.</p>
-</div>
+    <footer id="kontakt" class="border-t border-modest bg-white py-12 px-6">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between text-sm text-dim">
+            <div class="mb-4 md:mb-0">
+                <p class="font-semibold text-slate-900">Lab for Chemical & Biomedical Informatics</p>
+                <p>Institut za antropologiju, Zagreb</p>
+            </div>
+            <div class="space-x-4">
+                <a href="https://inantro.hr/laboratorij-za-kemijsku-i-biomedicinsku-informatiku/" class="hover:text-slate-900">Službena stranica laba</a>
+                <span>•</span>
+                <a href="mailto:lachebi@inantro.hr" class="hover:text-slate-900">Kontakt</a>
+            </div>
+        </div>
+    </footer>
 
-<script>
-function openTab(evt, tabName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it to open the first tab by default
-document.getElementById("defaultOpen").click();
-</script>
-   
 </body>
 </html>
