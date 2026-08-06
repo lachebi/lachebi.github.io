@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | Lab for Chemical & Biomedical Informatics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .hairline { border-color: #e5e5e5; }
+        a.link-ul { background-image: linear-gradient(currentColor,currentColor); background-size: 100% 1px; background-repeat: no-repeat; background-position: 0 100%; }
+        .photo-placeholder { background-color: #ececec; transition: background-color .25s ease; }
+        .card-lift:hover .photo-placeholder { background-color: #a3e635; }
+        .card-lift:hover .photo-placeholder span { color: #000; }
+        .accent { color: #a3e635; }
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="text-neutral-900 antialiased">
+
+    <header class="border-b hairline bg-white/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+            <a href="index.html" class="flex items-center space-x-4">
+                <img src="antro.png" alt="INANTRO" class="h-8 opacity-90">
+                <div class="h-6 border-r hairline"></div>
+                <span class="font-mono text-[11px] uppercase tracking-widest text-neutral-500">Lab for Chemical<br>& Biomedical Informatics</span>
+            </a>
+            <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8 font-mono text-[11px] sm:text-xs uppercase tracking-wider text-neutral-500">
+                <a href="index.html" class="hover:text-black transition">Home</a>
+                <a href="team.html" class="text-black transition">Team</a>
+                <a href="teaching.html" class="hover:text-black transition">Teaching</a>
+                <a href="mailto:lachebi@inantro.hr" class="text-black border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 pt-28 pb-32">
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 mb-8">— The people behind the lab</p>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium -tracking-tight leading-[0.95] text-black max-w-5xl">
+            The people behind LACHEBI.
+        </h1>
+        <p class="text-lg text-neutral-600 max-w-2xl leading-relaxed mt-10">
+            Institute for Anthropological Research, Zagreb.
+        </p>
+    </section>
+
+    <section class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="flex items-baseline justify-between mb-12">
+                <h2 class="text-3xl md:text-4xl font-medium -tracking-tight text-black">Members</h2>
+                <span class="font-mono text-xs text-neutral-500">01 / Team</span>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-px bg-neutral-200">
+
+                <div class="card-lift p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">ML</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">001</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Dr. Mario Lovrić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Head of Laboratory</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Leads research in cheminformatics, machine learning, and exposome data.</p>
+                </div>
+
+                <div class="card-lift p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">IŠ</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">002</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Dr. Iva Šunić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Senior Research Assistant</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Research on metabolomics, biomarker identification, and statistical modeling.</p>
+                </div>
+
+                <div class="card-lift p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">LŽ</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">003</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Lana Žoldoš</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                </div>
+
+                <div class="card-lift p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">AB</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">004</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Anja Bošnjaković</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                </div>
+
+                <div class="card-lift p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">NK</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">005</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Nina Karlović</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                </div>
+
+                <div class="card-lift p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">VG</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">006</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Viktoria Gašparić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="flex items-baseline justify-between mb-12">
+                <h2 class="text-3xl md:text-4xl font-medium -tracking-tight text-black">Institute</h2>
+                <span class="font-mono text-xs text-neutral-500">02 / Affiliation</span>
+            </div>
+            <div class="max-w-3xl">
+                <p class="text-neutral-700 text-lg leading-relaxed mb-8">
+                    The lab operates within the Institute for Anthropological Research in Zagreb. For the official laboratory profile, visit the institute's website.
+                </p>
+                <a href="https://inantro.hr/laboratorij-za-kemijsku-i-biomedicinsku-informatiku/" target="_blank" class="inline-flex items-center font-mono text-sm text-black link-ul pb-1">
+                    Official lab page at inantro.hr →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t hairline bg-white">
+        <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between text-sm text-neutral-500">
+            <div class="mb-6 md:mb-0">
+                <p class="text-black font-medium">Lab for Chemical & Biomedical Informatics</p>
+                <p class="mt-1">Institute for Anthropological Research, Zagreb</p>
+            </div>
+            <div class="flex space-x-6 font-mono text-xs uppercase tracking-wider">
+                <a href="https://inantro.hr/laboratorij-za-kemijsku-i-biomedicinsku-informatiku/" target="_blank" class="hover:text-black transition">Institute</a>
+                <a href="mailto:lachebi@inantro.hr" class="hover:text-black transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
