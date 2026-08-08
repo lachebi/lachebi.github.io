@@ -47,7 +47,7 @@
                 <a href="#publications" class="hover:text-black transition">Publications</a>
                 <a href="team.html" class="hover:text-black transition">Team</a>
                 <a href="teaching.html" class="hover:text-black transition">Teaching</a>
-                <a href="mailto:lachebi@inantro.hr" class="text-black border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition">Contact</a>
+                <a href="#" class="mail-link text-black border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition" data-mail-u="lachebi" data-mail-d="inantro.hr">Contact</a>
             </nav>
         </div>
     </header>
@@ -59,9 +59,6 @@
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium -tracking-tight leading-[0.95] text-black max-w-5xl">
                 Data in science<span class="accent">.</span> and health.
             </h1>
-            <p class="text-lg text-neutral-600 max-w-2xl leading-relaxed mt-10">
-                Computational methods for the exposome — from air quality to molecular modeling.
-            </p>
             <div class="flex flex-wrap gap-4 mt-10">
                 <a href="#projects" class="group inline-flex items-center gap-2 bg-black text-white text-sm font-medium px-6 py-3.5 rounded-full hover:bg-neutral-800 transition">
                     Explore our work
@@ -169,6 +166,20 @@
                 Our team publishes regularly in leading international journals across toxicology, informatics, and the exposome.
             </p>
             <div class="space-y-px bg-neutral-200 max-w-3xl mb-8">
+                <a href="https://doi.org/10.1515/cclm-2026-0609" target="_blank" rel="noopener" class="group flex items-start justify-between gap-6 bg-white hover:bg-neutral-50 p-5 transition">
+                    <div>
+                        <p class="font-mono text-xs text-neutral-500 mb-1.5">2026 · Clinical Chemistry and Laboratory Medicine</p>
+                        <p class="text-sm text-neutral-800">Šupak-Smolčić V., Lovrić M., Vrdoljak-Čolo I. et al. — Continuous reference curves for hematology and biochemistry analytes in pregnancy: a prospective study.</p>
+                    </div>
+                    <span class="text-neutral-400 group-hover:text-black arrow shrink-0">↗</span>
+                </a>
+                <a href="https://doi.org/10.3390/toxics14040299" target="_blank" rel="noopener" class="group flex items-start justify-between gap-6 bg-white hover:bg-neutral-50 p-5 transition">
+                    <div>
+                        <p class="font-mono text-xs text-neutral-500 mb-1.5">2026 · Toxics</p>
+                        <p class="text-sm text-neutral-800">Lovrić Štefiček M.J. et al., Lovrić M. — Comparative Evaluation of Machine Learning Models for Residential PM1 Prediction in Zagreb (Croatia).</p>
+                    </div>
+                    <span class="text-neutral-400 group-hover:text-black arrow shrink-0">↗</span>
+                </a>
                 <a href="https://doi.org/10.1111/1758-2229.70272" target="_blank" rel="noopener" class="group flex items-start justify-between gap-6 bg-white hover:bg-neutral-50 p-5 transition">
                     <div>
                         <p class="font-mono text-xs text-neutral-500 mb-1.5">2026 · Environmental Microbiology Reports</p>
@@ -221,8 +232,8 @@
                 <p class="mt-1">Institute for Anthropological Research, Zagreb</p>
             </div>
             <div class="flex space-x-6 font-mono text-xs uppercase tracking-wider">
-                <a href="https://inantro.hr/laboratorij-za-kemijsku-i-biomedicinsku-informatiku/" target="_blank" class="hover:text-black transition">Institute</a>
-                <a href="mailto:lachebi@inantro.hr" class="hover:text-black transition">Contact</a>
+                <a href="https://inantro.hr" target="_blank" class="hover:text-black transition">Institute</a>
+                <a href="#" class="mail-link hover:text-black transition" data-mail-u="lachebi" data-mail-d="inantro.hr">Contact</a>
             </div>
         </div>
     </footer>
@@ -237,6 +248,14 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('.mail-link').forEach(el => {
+            const u = el.dataset.mailU, d = el.dataset.mailD;
+            if (!u || !d) return;
+            el.href = 'mailto:' + u + '@' + d;
+            const span = el.querySelector('.mail-text');
+            if (span) span.textContent = u + '@' + d + (el.dataset.mailSuffix || '');
+        });
     </script>
 
 </body>
