@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holobiomics Lab | Lab for Chemical & Biomedical Informatics</title>
+    <meta name="description" content="Holobiomics Lab: integrated assessment of indoor air, environmental microbiome, behavior, and human health. HRZZ installation research project proposal led by Dr. Mario Lovrić.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .hairline { border-color: #e5e5e5; }
+        a.link-ul { background-image: linear-gradient(currentColor,currentColor); background-size: 100% 1px; background-repeat: no-repeat; background-position: 0 100%; }
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="text-neutral-900 antialiased">
+
+    <header class="border-b hairline bg-white/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+            <a href="index.html" class="flex items-center space-x-4">
+                <img src="antro.png" alt="INANTRO" class="h-8 opacity-90">
+                <div class="h-6 border-r hairline"></div>
+                <span class="font-mono text-[11px] uppercase tracking-widest text-neutral-500">Lab for Chemical<br>& Biomedical Informatics</span>
+            </a>
+            <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8 font-mono text-[11px] sm:text-xs uppercase tracking-wider text-neutral-500">
+                <a href="index.html" class="hover:text-black transition">Home</a>
+                <a href="team.html" class="hover:text-black transition">Team</a>
+                <a href="teaching.html" class="hover:text-black transition">Teaching</a>
+                <a href="holobiomics.html" class="text-black transition">Holobiomics</a>
+                <a href="#" class="mail-link text-black border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition" data-mail-u="lachebi" data-mail-d="inantro.hr">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 pt-16 sm:pt-28 pb-16 sm:pb-32">
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 mb-8">— Croatia · HRZZ · Seeking funding</p>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium -tracking-tight leading-[0.95] text-black max-w-5xl">
+            Holobiomics Lab.
+        </h1>
+        <p class="text-lg text-neutral-600 max-w-2xl leading-relaxed mt-10">
+            Integrated assessment of indoor air, environmental microbiome, behavior, and human health. A proposed installation research project to establish the lab's own holobiont-focused research group.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-8 sm:gap-12 mt-10">
+            <div class="flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-wider text-neutral-500">
+                <span>PI · Dr. Mario Lovrić</span>
+                <span>36 months</span>
+            </div>
+            <div class="flex items-center gap-4 sm:border-l hairline sm:pl-12">
+                <img src="slike/hrzz-logo.png" alt="Croatian Science Foundation (HRZZ)" class="h-10 sm:h-12 w-auto">
+                <span class="font-mono text-[11px] uppercase tracking-wider text-neutral-500 leading-snug">Proposal to the<br>Croatian Science Foundation</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Abstract</h2>
+                <span class="font-mono text-xs text-neutral-500">01 / Summary</span>
+            </div>
+            <div class="max-w-3xl text-neutral-700 text-lg leading-relaxed">
+                <p>
+                    Adults spend most of their time indoors, yet indoor air quality, the indoor microbiome, and human physiology are usually studied in isolation. Holobiomics Lab brings them together through the concept of the human holobiont: a person and their microbes as one interacting system. The project combines continuous bedroom air monitoring, profiling of house dust, nasal, and gut microbiomes, wearable measures of autonomic function and sleep, daily dietary records, and outdoor exposure in a longitudinal intervention study. It tests whether poor ventilation affects autonomic regulation, whether indoor and human microbiomes share core taxa, and whether simple behavioral changes, such as structured ventilation and more time outdoors, shift both. Interpretable machine learning and compositional statistics will integrate these data streams to identify modifiable pathways between the built environment and health. Protocols, data, and code will be shared openly following FAIR principles. The project also establishes a dedicated holobiomics research group at the Institute for Anthropological Research.
+                </p>
+            </div>
+            <figure class="mt-12 border hairline bg-white p-4 sm:p-8">
+                <img src="slike/holobiomics-overview.png" alt="Study overview: indoor air sensors, house dust, wearables, nasal and gut samples feeding sequencing, data processing and machine learning" class="w-full h-auto grayscale">
+                <figcaption class="font-mono text-xs text-neutral-500 mt-4">Fig. 1 — Study overview: indoor air, house dust, wearables, and nasal and gut samples feed into sequencing, data processing, and machine learning.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Hypotheses</h2>
+                <span class="font-mono text-xs text-neutral-500">02 / Questions</span>
+            </div>
+            <div class="grid md:grid-cols-3 gap-px bg-neutral-200">
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <span class="font-mono text-xs text-neutral-500">H1</span>
+                    <h3 class="text-xl font-medium text-black mt-4">Air and the autonomic system</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Elevated CO₂ and reduced ventilation impair autonomic regulation, measured through beat-to-beat heart intervals.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <span class="font-mono text-xs text-neutral-500">H2</span>
+                    <h3 class="text-xl font-medium text-black mt-4">Shared microbes</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Indoor dust and host-associated microbiomes share core taxa, consistent with microbial exchange or shared ecological selection.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <span class="font-mono text-xs text-neutral-500">H3</span>
+                    <h3 class="text-xl font-medium text-black mt-4">Behavior changes both</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Ventilation and outdoor-time interventions shift both environmental and host-associated microbiome profiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Team</h2>
+                <span class="font-mono text-xs text-neutral-500">03 / People</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200">
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="aspect-square bg-neutral-100 flex items-center justify-center mb-6 max-w-[120px]">
+                        <span class="font-mono text-2xl text-neutral-400">ML</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-black">Dr. Mario Lovrić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Principal Investigator</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Scientific coordination and study design; computational lead for interpretable machine learning, multi-stream data integration, and sensors.</p>
+                    <a href="https://orcid.org/0000-0002-3541-9624" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">ORCID ↗</a>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="aspect-square bg-neutral-100 flex items-center justify-center mb-6 max-w-[120px]">
+                        <span class="font-mono text-2xl text-neutral-400">IŠ</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-black">Dr. Iva Šunić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Postdoctoral Researcher</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Microbiome lead: sampling, DNA extraction, 16S sequencing design, contamination control, and bioinformatic processing.</p>
+                    <a href="https://orcid.org/0000-0002-5289-9463" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">ORCID ↗</a>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="aspect-square bg-neutral-100 flex items-center justify-center mb-6 max-w-[120px]">
+                        <span class="font-mono text-2xl text-neutral-400">AB</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-black">Anja Bošnjaković</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Field sampling, laboratory processing (DNA extraction, library preparation), metadata harmonization, and data quality control.</p>
+                    <a href="https://orcid.org/0009-0000-5727-6938" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">ORCID ↗</a>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="aspect-square bg-neutral-100 flex items-center justify-center mb-6 max-w-[120px]">
+                        <span class="font-mono text-2xl text-neutral-400">NK</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-black">Nina Karlović</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Indoor air sensor deployment and calibration; wearable data preprocessing and heart rate variability features.</p>
+                    <a href="https://orcid.org/0009-0006-3291-5872" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">ORCID ↗</a>
+                </div>
+            </div>
+            <div class="mt-10 max-w-3xl">
+                <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-4">Scientific advisors</p>
+                <div class="space-y-px bg-neutral-200">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 p-4 sm:p-5 bg-white">
+                        <span class="text-neutral-900 sm:w-56 shrink-0">Prof. Morten Rasmussen</span>
+                        <span class="min-w-0 text-sm text-neutral-600">University of Copenhagen — microbiome and longitudinal cohort design</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 p-4 sm:p-5 bg-white">
+                        <span class="text-neutral-900 sm:w-56 shrink-0">Dejan Strbad, Dipl. Phys.</span>
+                        <span class="min-w-0 text-sm text-neutral-600">Ascalia — sensors, software, and machine learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Planned outputs</h2>
+                <span class="font-mono text-xs text-neutral-500">04 / Outputs</span>
+            </div>
+            <div class="grid md:grid-cols-3 gap-px bg-neutral-200">
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="font-mono text-xs text-neutral-500">Publications</span>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">At least five gold open-access papers, starting with a study protocol paper published before data collection.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="font-mono text-xs text-neutral-500">Recommendations</span>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Evidence briefs on bedroom ventilation and indoor health for public health and building stakeholders.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="font-mono text-xs text-neutral-500">Training</span>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Doctoral theses in microbiome bioinformatics, wearable data science, and multi-modal data integration.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="font-mono text-xs text-neutral-500">Pre-registered</span>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Hypotheses and the full analysis plan are registered before data collection, followed by a published study protocol.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="font-mono text-xs text-neutral-500">FAIR data</span>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Sequencing data in ENA; indoor air and wearable time series in Zenodo; analysis code on GitHub with a DOI.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="font-mono text-xs text-neutral-500">Reusable methods</span>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">A standard operating procedure package for integrated indoor health studies and a validated analysis pipeline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Want to cooperate?</h2>
+                <span class="font-mono text-xs text-neutral-500">05 / Contact</span>
+            </div>
+            <div class="max-w-3xl flex flex-col md:flex-row md:items-center gap-6">
+                <a href="#" class="mail-link inline-flex items-center font-mono text-sm text-black link-ul pb-1" data-mail-u="lachebi" data-mail-d="inantro.hr" data-mail-suffix=" →">
+                    <span class="mail-text">Email us</span>
+                </a>
+                <a href="index.html#projects" class="inline-flex items-center font-mono text-sm text-neutral-500 hover:text-black link-ul pb-1">
+                    All projects →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t hairline bg-white">
+        <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between text-sm text-neutral-500">
+            <div class="mb-6 md:mb-0">
+                <p class="text-black font-medium">Lab for Chemical & Biomedical Informatics</p>
+                <p class="mt-1">Institute for Anthropological Research, Zagreb</p>
+            </div>
+            <div class="flex space-x-6 font-mono text-xs uppercase tracking-wider">
+                <a href="https://inantro.hr" target="_blank" rel="noopener" class="hover:text-black transition">Institute</a>
+                <a href="#" class="mail-link hover:text-black transition" data-mail-u="lachebi" data-mail-d="inantro.hr">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('.mail-link').forEach(el => {
+            const u = el.dataset.mailU, d = el.dataset.mailD;
+            if (!u || !d) return;
+            el.href = 'mailto:' + u + '@' + d;
+            const span = el.querySelector('.mail-text');
+            if (span) span.textContent = u + '@' + d + (el.dataset.mailSuffix || '');
+        });
+    </script>
+
+</body>
+</html>
