@@ -10,10 +10,21 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .accent { color: #ab8b65; }
+        .bg-accent { background-color: #ab8b65; }
         .hairline { border-color: #e5e5e5; }
         a.link-ul { background-image: linear-gradient(currentColor,currentColor); background-size: 100% 1px; background-repeat: no-repeat; background-position: 0 100%; }
         .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .nav-link { color: #737373; transition: color .2s ease; }
+        .nav-link:hover { color: #000; }
+        .nav-link.is-active { color: #000; font-weight: 700; }
+        .nav-drop summary { list-style: none; }
+        .nav-drop summary::-webkit-details-marker { display: none; }
+        .nav-drop .caret { display: inline-block; transition: transform .2s ease; }
+        .nav-drop[open] .caret { transform: rotate(180deg); }
+        .drop-item { display: flex; justify-content: space-between; padding: .5rem 1rem; color: #404040; }
+        .drop-item:hover { background: #fafafa; color: #000; }
     </style>
 </head>
 <body class="text-neutral-900 antialiased">
@@ -25,11 +36,25 @@
                 <div class="h-6 border-r hairline"></div>
                 <span class="font-mono text-[11px] uppercase tracking-widest text-neutral-500">Lab for Chemical<br>& Biomedical Informatics</span>
             </a>
-            <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8 font-mono text-[11px] sm:text-xs uppercase tracking-wider text-neutral-500">
-                <a href="index.html" class="hover:text-black transition">Home</a>
-                <a href="team.html" class="hover:text-black transition">Team</a>
-                <a href="teaching.html" class="hover:text-black transition">Teaching</a>
-                <a href="holobiomics.html" class="hover:text-black transition">Holobiomics</a>
+            <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8 font-mono text-[11px] sm:text-xs uppercase tracking-wider">
+                <a href="index.html" class="nav-link">Home</a>
+                <details class="nav-drop relative">
+                    <summary class="nav-link is-active cursor-pointer select-none">Projects <span class="caret">▾</span></summary>
+                    <div class="absolute left-0 top-full mt-3 w-64 bg-white border hairline shadow-lg py-2 normal-case tracking-normal font-sans text-sm z-50">
+                        <a href="index.html#projects" class="drop-item">All projects</a>
+                        <div class="border-t hairline my-2"></div>
+                        <a href="holobiomics.html" class="drop-item">Holobiomics Lab</a>
+                        <a href="inantro-connect.html" class="drop-item">INANTRO_Connect</a>
+                        <a href="https://ediaqi.eu/" target="_blank" rel="noopener" class="drop-item">EDIAQI <span class="text-neutral-400">↗</span></a>
+                        <a href="https://nextaire.eu/" target="_blank" rel="noopener" class="drop-item">NextAIRE <span class="text-neutral-400">↗</span></a>
+                        <a href="https://endo.inantro.hr" target="_blank" rel="noopener" class="drop-item">EndOMICS <span class="text-neutral-400">↗</span></a>
+                        <a href="https://inantro.hr/en/news/how-soil-microorganisms-can-help-plants-cope-better-with-climate-change/" target="_blank" rel="noopener" class="drop-item">ClimaGRIT <span class="text-neutral-400">↗</span></a>
+                    </div>
+                </details>
+                <a href="index.html#news" class="nav-link">News</a>
+                <a href="index.html#publications" class="nav-link">Publications</a>
+                <a href="index.html#team" class="nav-link">Team</a>
+                <a href="index.html#teaching" class="nav-link">Teaching</a>
                 <a href="#" class="mail-link text-black border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition" data-mail-u="lachebi" data-mail-d="inantro.hr">Contact</a>
             </nav>
         </div>
@@ -54,7 +79,6 @@
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">About</h2>
-                <span class="font-mono text-xs text-neutral-500">01 / Summary</span>
             </div>
             <div class="max-w-3xl text-neutral-700 text-lg leading-relaxed space-y-6">
                 <p>
@@ -74,7 +98,6 @@
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Objectives</h2>
-                <span class="font-mono text-xs text-neutral-500">02 / Goals</span>
             </div>
             <div class="grid md:grid-cols-3 gap-px bg-neutral-200">
                 <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
@@ -100,7 +123,6 @@
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Activities</h2>
-                <span class="font-mono text-xs text-neutral-500">03 / Work</span>
             </div>
             <div class="space-y-px bg-neutral-200 max-w-4xl">
                 <div class="flex flex-col sm:flex-row gap-2 sm:gap-8 p-5 sm:p-6 bg-white">
@@ -146,7 +168,6 @@
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Infrastructure</h2>
-                <span class="font-mono text-xs text-neutral-500">04 / Facilities</span>
             </div>
             <p class="text-neutral-700 text-lg leading-relaxed max-w-3xl mb-10">
                 The project builds on the Centre for Applied Bioanthropology, equipped in 2018 with ERDF funding.
@@ -172,19 +193,17 @@
         </div>
     </section>
 
-    <section class="border-t hairline reveal">
-        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
-            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Want to cooperate?</h2>
-                <span class="font-mono text-xs text-neutral-500">05 / Contact</span>
+    <section class="bg-black text-white reveal">
+        <div class="max-w-6xl mx-auto px-6 py-16 sm:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium -tracking-tight">Want to cooperate<span class="accent">?</span></h2>
+                <p class="text-neutral-400 text-lg leading-relaxed mt-6 max-w-lg">We work with research groups, clinics and companies on exposome, multi-omics and machine-learning projects, and welcome students looking for a thesis topic.</p>
             </div>
-            <div class="max-w-3xl flex flex-col md:flex-row md:items-center gap-6">
-                <a href="#" class="mail-link inline-flex items-center font-mono text-sm text-black link-ul pb-1" data-mail-u="lachebi" data-mail-d="inantro.hr" data-mail-suffix=" →">
-                    <span class="mail-text">Email us</span>
+            <div class="flex flex-col sm:flex-row md:justify-end gap-4">
+                <a href="#" class="mail-link group inline-flex items-center justify-center gap-2 bg-accent text-black text-sm font-medium px-6 py-3.5 rounded-full hover:bg-white transition" data-mail-u="lachebi" data-mail-d="inantro.hr">
+                    Email us →
                 </a>
-                <a href="index.html#projects" class="inline-flex items-center font-mono text-sm text-neutral-500 hover:text-black link-ul pb-1">
-                    All projects →
-                </a>
+                <a href="index.html#projects" class="inline-flex items-center justify-center border border-neutral-600 text-neutral-200 text-sm font-medium px-6 py-3.5 rounded-full hover:border-white hover:text-white transition">All projects</a>
             </div>
         </div>
     </section>
@@ -220,6 +239,10 @@
             const span = el.querySelector('.mail-text');
             if (span) span.textContent = u + '@' + d + (el.dataset.mailSuffix || '');
         });
+        document.addEventListener('click', e => {
+            document.querySelectorAll('.nav-drop[open]').forEach(d => { if (!d.contains(e.target)) d.removeAttribute('open'); });
+        });
+        document.querySelectorAll('.drop-item').forEach(el => el.addEventListener('click', () => el.closest('details').removeAttribute('open')));
     </script>
 
 </body>

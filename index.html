@@ -12,8 +12,8 @@
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .hairline { border-color: #e5e5e5; }
         a.link-ul { background-image: linear-gradient(currentColor,currentColor); background-size: 100% 1px; background-repeat: no-repeat; background-position: 0 100%; }
-        .accent { color: #a3e635; }
-        .bg-accent { background-color: #a3e635; }
+        .accent { color: #ab8b65; }
+        .bg-accent { background-color: #ab8b65; }
 
         .noise {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
@@ -22,6 +22,9 @@
         .marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
         @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
+        .photo-placeholder { background-color: #ececec; transition: background-color .25s ease; }
+        .card-lift:hover .photo-placeholder { background-color: #ab8b65; }
+        .card-lift:hover .photo-placeholder span { color: #000; }
         .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
@@ -30,6 +33,15 @@
 
         .stat { transition: transform .3s ease; }
         .stat:hover { transform: translateY(-2px); }
+        .nav-link { color: #737373; transition: color .2s ease; }
+        .nav-link:hover { color: #000; }
+        .nav-link.is-active { color: #000; font-weight: 700; }
+        .nav-drop summary { list-style: none; }
+        .nav-drop summary::-webkit-details-marker { display: none; }
+        .nav-drop .caret { display: inline-block; transition: transform .2s ease; }
+        .nav-drop[open] .caret { transform: rotate(180deg); }
+        .drop-item { display: flex; justify-content: space-between; padding: .5rem 1rem; color: #404040; }
+        .drop-item:hover { background: #fafafa; color: #000; }
     </style>
 </head>
 <body class="text-neutral-900 antialiased">
@@ -41,14 +53,25 @@
                 <div class="h-6 border-r hairline"></div>
                 <span class="font-mono text-[11px] uppercase tracking-widest text-neutral-500">Lab for Chemical<br>& Biomedical Informatics</span>
             </a>
-            <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8 font-mono text-[11px] sm:text-xs uppercase tracking-wider text-neutral-500">
-                <a href="index.html" class="text-black transition">Home</a>
-                <a href="#projects" class="hover:text-black transition">Projects</a>
-                <a href="#news" class="hover:text-black transition">News</a>
-                <a href="#publications" class="hover:text-black transition">Publications</a>
-                <a href="team.html" class="hover:text-black transition">Team</a>
-                <a href="teaching.html" class="hover:text-black transition">Teaching</a>
-                <a href="holobiomics.html" class="hover:text-black transition">Holobiomics</a>
+            <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8 font-mono text-[11px] sm:text-xs uppercase tracking-wider">
+                <a href="index.html" class="nav-link is-active">Home</a>
+                <details class="nav-drop relative">
+                    <summary class="nav-link cursor-pointer select-none">Projects <span class="caret">▾</span></summary>
+                    <div class="absolute left-0 top-full mt-3 w-64 bg-white border hairline shadow-lg py-2 normal-case tracking-normal font-sans text-sm z-50">
+                        <a href="index.html#projects" class="drop-item">All projects</a>
+                        <div class="border-t hairline my-2"></div>
+                        <a href="holobiomics.html" class="drop-item">Holobiomics Lab</a>
+                        <a href="inantro-connect.html" class="drop-item">INANTRO_Connect</a>
+                        <a href="https://ediaqi.eu/" target="_blank" rel="noopener" class="drop-item">EDIAQI <span class="text-neutral-400">↗</span></a>
+                        <a href="https://nextaire.eu/" target="_blank" rel="noopener" class="drop-item">NextAIRE <span class="text-neutral-400">↗</span></a>
+                        <a href="https://endo.inantro.hr" target="_blank" rel="noopener" class="drop-item">EndOMICS <span class="text-neutral-400">↗</span></a>
+                        <a href="https://inantro.hr/en/news/how-soil-microorganisms-can-help-plants-cope-better-with-climate-change/" target="_blank" rel="noopener" class="drop-item">ClimaGRIT <span class="text-neutral-400">↗</span></a>
+                    </div>
+                </details>
+                <a href="index.html#news" class="nav-link">News</a>
+                <a href="index.html#publications" class="nav-link">Publications</a>
+                <a href="index.html#team" class="nav-link">Team</a>
+                <a href="index.html#teaching" class="nav-link">Teaching</a>
                 <a href="#" class="mail-link text-black border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition" data-mail-u="lachebi" data-mail-d="inantro.hr">Contact</a>
             </nav>
         </div>
@@ -66,7 +89,7 @@
                     Explore our work
                     <span class="arrow">↗</span>
                 </a>
-                <a href="team.html" class="inline-flex items-center justify-center gap-2 border border-neutral-300 text-neutral-700 text-sm font-medium px-6 py-3.5 rounded-full hover:border-black hover:text-black transition">
+                <a href="#team" class="inline-flex items-center justify-center gap-2 border border-neutral-300 text-neutral-700 text-sm font-medium px-6 py-3.5 rounded-full hover:border-black hover:text-black transition">
                     Meet the team
                 </a>
             </div>
@@ -86,6 +109,37 @@
                 <span class="px-6">Machine Learning</span><span class="accent px-2">/</span>
                 <span class="px-6">Metagenomics</span><span class="accent px-2">/</span>
                 <span class="px-6">Biomarker Discovery</span><span class="accent px-2">/</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black mb-6">What we do</h2>
+            <p class="text-neutral-700 text-lg leading-relaxed max-w-3xl mb-10 sm:mb-12">
+                We are a computational lab at the Institute for Anthropological Research in Zagreb. We combine chemical, biological and environmental measurements with machine learning to understand how the places we live in, and what we are exposed to, shape human health.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200">
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="block w-6 h-0.5 bg-accent mb-5"></span>
+                    <h3 class="text-lg font-medium text-black">Exposome and indoor air</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Air quality sensors, pollution modelling and indoor environments, and what they mean for health.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="block w-6 h-0.5 bg-accent mb-5"></span>
+                    <h3 class="text-lg font-medium text-black">Multi-omics</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Metabolomics, lipidomics and microbiome data for biomarker discovery.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="block w-6 h-0.5 bg-accent mb-5"></span>
+                    <h3 class="text-lg font-medium text-black">Machine learning</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Interpretable models for prediction, cheminformatics and in silico toxicology.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white">
+                    <span class="block w-6 h-0.5 bg-accent mb-5"></span>
+                    <h3 class="text-lg font-medium text-black">Clinical and cohort data</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Childhood asthma, pregnancy and endometriosis studies with clinical partners.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -111,7 +165,6 @@
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Our projects</h2>
-                <span class="font-mono text-xs text-neutral-500">01 / Projects</span>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200">
                 <a href="https://ediaqi.eu/" target="_blank" rel="noopener" class="group block p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
@@ -170,9 +223,21 @@
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">News</h2>
-                <span class="font-mono text-xs text-neutral-500">02 / News</span>
             </div>
             <div class="space-y-px bg-neutral-200 max-w-3xl">
+            <!--
+                HOW TO ADD A NEWS ITEM (anyone can do this in GitHub: open index.html, click the pencil, edit, "Commit changes").
+                Copy the block below, paste it directly under this comment (newest item goes on top), and change the three texts:
+                date (e.g. "Nov 2026"), category (Conference / Secondment / Training / Project / Award), and the sentence.
+
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-8 bg-white p-4 sm:p-5">
+                    <span class="font-mono text-xs text-neutral-500 sm:w-24 shrink-0 pt-0.5">Nov 2026</span>
+                    <div class="min-w-0">
+                        <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-1.5">Conference</p>
+                        <p class="text-sm text-neutral-800">Name Surname presented ... at ...</p>
+                    </div>
+                </div>
+            -->
                 <div class="flex flex-col sm:flex-row gap-1 sm:gap-8 bg-white p-4 sm:p-5">
                     <span class="font-mono text-xs text-neutral-500 sm:w-24 shrink-0 pt-0.5">Oct 2026</span>
                     <div class="min-w-0">
@@ -209,7 +274,6 @@
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Publications</h2>
-                <span class="font-mono text-xs text-neutral-500">03 / Publications</span>
             </div>
             <p class="text-neutral-700 text-lg leading-relaxed max-w-3xl mb-10">
                 Our team publishes regularly in leading international journals across toxicology, informatics, and the exposome.
@@ -278,19 +342,152 @@
         </div>
     </section>
 
+    <section id="team" class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Team</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-px bg-neutral-200">
+
+                <div class="card-lift p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">ML</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">001</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Dr. Mario Lovrić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Head of Laboratory</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Leads research in cheminformatics, machine learning, and exposome data.</p>
+                    <a href="https://inantro.hr/en/staff-profiles/mario-lovric-phd/" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">INANTRO profile ↗</a>
+                </div>
+
+                <div class="card-lift p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">IŠ</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">002</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Dr. Iva Šunić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Senior Research Assistant</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-4">Research on metabolomics, biomarker identification, and statistical modeling.</p>
+                    <a href="https://inantro.hr/en/staff-profiles/iva-sunic-2/" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">INANTRO profile ↗</a>
+                </div>
+
+                <div class="card-lift p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">LŽ</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">003</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Lana Žoldoš</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                    <a href="https://inantro.hr/en/staff-profiles/lana-zoldos-2/" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">INANTRO profile ↗</a>
+                </div>
+
+                <div class="card-lift p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">AB</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">004</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Anja Bošnjaković</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                    <a href="https://inantro.hr/en/staff-profiles/anja-bosnjakovic-2/" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">INANTRO profile ↗</a>
+                </div>
+
+                <div class="card-lift p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">NK</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">005</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Nina Karlović</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                    <a href="https://inantro.hr/en/staff-profiles/nina-karlovic-2/" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">INANTRO profile ↗</a>
+                </div>
+
+                <div class="card-lift p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <div class="photo-placeholder aspect-square flex items-center justify-center mb-6">
+                        <span class="font-mono text-3xl text-neutral-400">VG</span>
+                    </div>
+                    <span class="font-mono text-xs text-neutral-500">006</span>
+                    <h3 class="text-xl font-medium text-black mt-3">Viktoria Gašparić</h3>
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-500 mt-2">Doctoral Candidate</p>
+                    <a href="https://inantro.hr/en/staff-profiles/viktoria-gasparic-2/" target="_blank" rel="noopener" class="inline-block font-mono text-xs text-neutral-500 hover:text-black link-ul pb-0.5 mt-4">INANTRO profile ↗</a>
+                </div>
+
+            </div>
+            <div class="max-w-3xl mt-12 sm:mt-16">
+                <p class="text-neutral-700 text-lg leading-relaxed mb-6">
+                    The lab operates within the Center for Applied Bioanthropology at the Institute for Anthropological Research in Zagreb. More about the Institute and its laboratories is on the institute's website.
+                </p>
+                <a href="https://inantro.hr" target="_blank" rel="noopener" class="inline-flex items-center font-mono text-sm text-black link-ul pb-1">
+                    More on INANTRO →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching" class="border-t hairline reveal">
+        <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
+            <div class="flex items-baseline justify-between mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Teaching</h2>
+            </div>
+            <p class="text-neutral-700 text-lg leading-relaxed max-w-3xl mb-10">Graduate and postgraduate education in cheminformatics, machine learning, and applied statistics.</p>
+            <div class="grid md:grid-cols-2 gap-px bg-neutral-200">
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <span class="font-mono text-xs text-neutral-500">001</span>
+                    <h3 class="text-xl font-medium text-black mt-4">Systems biomedicine</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Integrative modeling of biological systems across omics layers, from molecule to phenotype.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <span class="font-mono text-xs text-neutral-500">002</span>
+                    <h3 class="text-xl font-medium text-black mt-4">Bioinformatics</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Sequence, structure, and pathway analysis pipelines for genomics and metagenomics data.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <span class="font-mono text-xs text-neutral-500">003</span>
+                    <h3 class="text-xl font-medium text-black mt-4">AI in life sciences</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Applied machine learning for biomedical and exposome data, taught at the master's level.</p>
+                </div>
+                <div class="p-6 sm:p-8 bg-white hover:bg-neutral-50 transition">
+                    <span class="font-mono text-xs text-neutral-500">004</span>
+                    <h3 class="text-xl font-medium text-black mt-4">Clinical decision making</h3>
+                    <p class="text-sm text-neutral-600 leading-relaxed mt-3">Data-driven models to support diagnosis, risk stratification, and treatment decisions.</p>
+                </div>
+            </div>
+            <div class="max-w-3xl mt-12 sm:mt-16">
+                <h3 class="text-xl font-medium text-black mb-4">Supervision</h3>
+                <p class="text-neutral-700 text-lg leading-relaxed">
+                The lab supervises doctoral and master's students across topics in cheminformatics, biomedical data science, and the exposome. Prospective students are welcome to get in touch.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="border-t hairline reveal">
         <div class="max-w-6xl mx-auto px-6 py-14 sm:py-20">
             <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Special projects</h2>
-                <span class="font-mono text-xs text-neutral-500">04 / Special</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium -tracking-tight text-black">Internal project</h2>
             </div>
-            <div class="max-w-3xl border-l-2 pl-5 sm:pl-8" style="border-color:#a3e635">
+            <div class="max-w-3xl border-l-2 pl-5 sm:pl-8" style="border-color:#ab8b65">
                 <p class="text-neutral-700 text-lg leading-relaxed mb-8">
-                    In collaboration with Poliklinika Breyer, we conduct research on endometriosis.
+                    EndOMICS is the lab's own internal project. With Poliklinika Breyer and KBC Sestre milosrdnice, we look for metabolomic and gut microbiome biomarkers of endometriosis.
                 </p>
-                <a href="https://endo.inantro.hr" class="inline-flex items-center font-mono text-sm text-black link-ul pb-1">
+                <a href="https://endo.inantro.hr" target="_blank" rel="noopener" class="inline-flex items-center font-mono text-sm text-black link-ul pb-1">
                     endo.inantro.hr →
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black text-white reveal">
+        <div class="max-w-6xl mx-auto px-6 py-16 sm:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium -tracking-tight">Want to cooperate<span class="accent">?</span></h2>
+                <p class="text-neutral-400 text-lg leading-relaxed mt-6 max-w-lg">We work with research groups, clinics and companies on exposome, multi-omics and machine-learning projects, and welcome students looking for a thesis topic.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row md:justify-end gap-4">
+                <a href="#" class="mail-link group inline-flex items-center justify-center gap-2 bg-accent text-black text-sm font-medium px-6 py-3.5 rounded-full hover:bg-white transition" data-mail-u="lachebi" data-mail-d="inantro.hr">
+                    Email us →
+                </a>
+                <a href="#team" class="inline-flex items-center justify-center border border-neutral-600 text-neutral-200 text-sm font-medium px-6 py-3.5 rounded-full hover:border-white hover:text-white transition">Meet the team</a>
             </div>
         </div>
     </section>
@@ -326,6 +523,25 @@
             const span = el.querySelector('.mail-text');
             if (span) span.textContent = u + '@' + d + (el.dataset.mailSuffix || '');
         });
+        document.addEventListener('click', e => {
+            document.querySelectorAll('.nav-drop[open]').forEach(d => { if (!d.contains(e.target)) d.removeAttribute('open'); });
+        });
+        document.querySelectorAll('.drop-item').forEach(el => el.addEventListener('click', () => el.closest('details').removeAttribute('open')));
+        const spyLinks = { projects: document.querySelector('.nav-drop summary'), news: document.querySelector('nav a[href="index.html#news"]'), publications: document.querySelector('nav a[href="index.html#publications"]'), team: document.querySelector('nav a[href="index.html#team"]'), teaching: document.querySelector('nav a[href="index.html#teaching"]') };
+        const homeLink = document.querySelector('nav a[href="index.html"]');
+        const setActive = id => {
+            homeLink.classList.toggle('is-active', !id);
+            Object.entries(spyLinks).forEach(([k, el]) => el && el.classList.toggle('is-active', k === id));
+        };
+        const spySections = Object.keys(spyLinks).map(id => document.getElementById(id)).filter(Boolean);
+        const updateSpy = () => {
+            const line = window.innerHeight * 0.4;
+            let current = null;
+            spySections.forEach(sec => { const r = sec.getBoundingClientRect(); if (r.top <= line && r.bottom > line) current = sec.id; });
+            setActive(current);
+        };
+        window.addEventListener('scroll', updateSpy, { passive: true });
+        window.addEventListener('load', updateSpy);
     </script>
 
 </body>
